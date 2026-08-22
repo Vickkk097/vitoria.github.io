@@ -1,0 +1,50 @@
+# Plataforma de Hospedagens e Viagens
+
+Projeto acadêmico desenvolvido durante o curso intensivo de Computer Programming da Estação Hack MasterTech.
+
+## Objetivo do projeto
+
+Desenvolver uma plataforma web para pesquisa de hotéis e hospedagens, reunindo informações relevantes em um único ambiente digital.
+
+A aplicação permite consultar acomodações e comparar opções com base em critérios como faixa de preço, características da estadia e disponibilidade de kits de viagem. A proposta foi inspirada em funcionalidades presentes em plataformas como Trivago e Airbnb, buscando facilitar a escolha de hospedagens e a comunicação com os responsáveis pelos imóveis.
+
+## Funcionalidades
+
+- Consulta de hotéis e hospedagens disponíveis
+- Filtros por preço e características da estadia
+- Exibição de informações sobre acomodações
+- Visualização de opções de kits de viagem
+- Possibilidade de contato com o responsável pelo imóvel
+- Interface organizada para facilitar a busca do usuário
+
+## Tecnologias utilizadas
+
+- **HTML:** estruturação das páginas e conteúdos da aplicação
+- **CSS:** estilização e organização visual da interface
+- **JavaScript:** interações, lógica de filtros e funcionalidades no front-end
+- **PHP:** conceitos de desenvolvimento back-end
+- **Java e Python:** apoio aos conhecimentos de lógica de programação e desenvolvimento de software
+- **Banco de dados:** organização das informações de hotéis e hospedagens
+- **Git e GitHub:** versionamento e colaboração durante o projeto
+
+## O que aprendi com a experiência
+
+O projeto permitiu colocar em prática conhecimentos de desenvolvimento web e compreender melhor as etapas de criação de uma aplicação, desde a identificação de uma necessidade até a construção de uma solução.
+
+Também aprofundei conhecimentos em:
+
+- Estruturação e estilização de páginas web
+- Lógica de programação e interatividade com JavaScript
+- Organização e apresentação de dados
+- Fundamentos de desenvolvimento front-end e back-end
+- Trabalho em equipe, comunicação e divisão de tarefas
+- Resolução de problemas durante o desenvolvimento
+- Importância da experiência do usuário em soluções digitais
+
+## Próximos passos
+
+- Aprimorar os filtros de busca
+- Implementar autenticação de usuários
+- Integrar dados reais de hospedagens
+- Melhorar a responsividade para dispositivos móveis
+- Explorar recursos de Inteligência Artificial para recomendações personalizadas
