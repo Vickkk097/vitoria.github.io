@@ -1,50 +1,652 @@
-# Plataforma de Hospedagens e Viagens
 
-Projeto acadêmico desenvolvido durante o curso intensivo de Computer Programming da Estação Hack MasterTech.
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Portfólio profissional de Vitoria, estudante de Sistemas de Informação." />
+    <title>Portfólio | Vitoria</title>
+    <style>
+      :root {
+        --ink: #17202a;
+        --muted: #5e6872;
+        --canvas: #f7f6f3;
+        --surface: #ffffff;
+        --line: #e8e4de;
+        --accent: #9c4f46;
+        --accent-dark: #7e3d37;
+        --accent-soft: #f9e8e3;
+        --teal: #26726c;
+        --shadow: 0 14px 38px rgba(35, 30, 25, 0.08);
+      }
 
-## Objetivo do projeto
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
 
-Desenvolver uma plataforma web para pesquisa de hotéis e hospedagens, reunindo informações relevantes em um único ambiente digital.
+      body {
+        margin: 0;
+        color: var(--ink);
+        background: var(--canvas);
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        line-height: 1.6;
+      }
 
-A aplicação permite consultar acomodações e comparar opções com base em critérios como faixa de preço, características da estadia e disponibilidade de kits de viagem. A proposta foi inspirada em funcionalidades presentes em plataformas como Trivago e Airbnb, buscando facilitar a escolha de hospedagens e a comunicação com os responsáveis pelos imóveis.
+      a { color: inherit; }
+      .container { width: min(1120px, calc(100% - 40px)); margin: 0 auto; }
+      .eyebrow { margin: 0 0 12px; color: var(--accent); font-size: .76rem; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; }
+      .section { padding: 88px 0; }
+      .section-title { max-width: 680px; margin: 0 0 10px; font-size: clamp(1.8rem, 3vw, 2.55rem); line-height: 1.14; letter-spacing: -.045em; }
+      .section-intro { max-width: 680px; margin: 0; color: var(--muted); }
 
-## Funcionalidades
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 5;
+        border-bottom: 1px solid rgba(232, 228, 222, .8);
+        background: rgba(247, 246, 243, .88);
+        backdrop-filter: blur(14px);
+      }
 
-- Consulta de hotéis e hospedagens disponíveis
-- Filtros por preço e características da estadia
-- Exibição de informações sobre acomodações
-- Visualização de opções de kits de viagem
-- Possibilidade de contato com o responsável pelo imóvel
-- Interface organizada para facilitar a busca do usuário
+      nav {
+        min-height: 68px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+      }
 
-## Tecnologias utilizadas
+      .brand {
+        color: var(--ink);
+        font-weight: 800;
+        letter-spacing: -.03em;
+        text-decoration: none;
+      }
 
-- **HTML:** estruturação das páginas e conteúdos da aplicação
-- **CSS:** estilização e organização visual da interface
-- **JavaScript:** interações, lógica de filtros e funcionalidades no front-end
-- **PHP:** conceitos de desenvolvimento back-end
-- **Java e Python:** apoio aos conhecimentos de lógica de programação e desenvolvimento de software
-- **Banco de dados:** organização das informações de hotéis e hospedagens
-- **Git e GitHub:** versionamento e colaboração durante o projeto
+      .nav-links {
+        display: flex;
+        gap: 20px;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+      }
 
-## O que aprendi com a experiência
+      .nav-links a {
+        color: var(--muted);
+        font-size: .9rem;
+        font-weight: 650;
+        text-decoration: none;
+      }
 
-O projeto permitiu colocar em prática conhecimentos de desenvolvimento web e compreender melhor as etapas de criação de uma aplicação, desde a identificação de uma necessidade até a construção de uma solução.
+      .nav-links a:hover { color: var(--accent); }
 
-Também aprofundei conhecimentos em:
+      .hero {
+        overflow: hidden;
+        padding: 100px 0 82px;
+        background:
+          radial-gradient(circle at 85% 15%, #ead7d0 0, transparent 24rem),
+          linear-gradient(135deg, #fffdf9 0%, #f6f1ec 100%);
+      }
 
-- Estruturação e estilização de páginas web
-- Lógica de programação e interatividade com JavaScript
-- Organização e apresentação de dados
-- Fundamentos de desenvolvimento front-end e back-end
-- Trabalho em equipe, comunicação e divisão de tarefas
-- Resolução de problemas durante o desenvolvimento
-- Importância da experiência do usuário em soluções digitais
+      .hero-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1.35fr) minmax(280px, .65fr);
+        align-items: center;
+        gap: 70px;
+      }
 
-## Próximos passos
+      .hero h1 {
+        max-width: 760px;
+        margin: 0;
+        font-size: clamp(2.7rem, 6vw, 5.4rem);
+        line-height: .98;
+        letter-spacing: -.07em;
+      }
 
-- Aprimorar os filtros de busca
-- Implementar autenticação de usuários
-- Integrar dados reais de hospedagens
-- Melhorar a responsividade para dispositivos móveis
-- Explorar recursos de Inteligência Artificial para recomendações personalizadas
+      .hero h1 span { color: var(--accent); }
+
+      .hero-copy {
+        max-width: 640px;
+        margin: 28px 0 0;
+        color: #47515b;
+        font-size: 1.08rem;
+      }
+
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 32px;
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 46px;
+        padding: 0 18px;
+        border: 1px solid var(--accent);
+        border-radius: 100px;
+        background: var(--accent);
+        color: white;
+        font-weight: 750;
+        text-decoration: none;
+        transition: transform .2s ease, background .2s ease;
+      }
+
+      .button:hover {
+        background: var(--accent-dark);
+        transform: translateY(-2px);
+      }
+
+      .button.secondary {
+        background: transparent;
+        color: var(--accent);
+      }
+
+      .button.secondary:hover { background: var(--accent-soft); }
+
+      .profile-card {
+        padding: 26px;
+        border: 1px solid rgba(157, 79, 70, .14);
+        border-radius: 22px;
+        background: rgba(255, 255, 255, .67);
+        box-shadow: var(--shadow);
+      }
+
+      .avatar {
+        display: grid;
+        width: 76px;
+        height: 76px;
+        margin-bottom: 26px;
+        place-items: center;
+        border-radius: 22px;
+        background: var(--accent);
+        color: white;
+        font-size: 1.75rem;
+        font-weight: 850;
+      }
+
+      .profile-card p {
+        margin: 0;
+        color: var(--muted);
+      }
+
+      .profile-card strong {
+        display: block;
+        margin-bottom: 5px;
+        font-size: 1.18rem;
+      }
+
+      .quick-facts {
+        display: grid;
+        gap: 13px;
+        margin: 24px 0 0;
+        padding: 20px 0 0;
+        border-top: 1px solid var(--line);
+      }
+
+      .quick-facts span {
+        color: var(--teal);
+        font-size: .88rem;
+        font-weight: 750;
+      }
+
+      .about-grid {
+        display: grid;
+        grid-template-columns: 1.1fr .9fr;
+        gap: 56px;
+        align-items: start;
+        margin-top: 46px;
+      }
+
+      .about-copy p {
+        margin: 0 0 18px;
+        color: #3f4952;
+      }
+
+      .value-list {
+        display: grid;
+        gap: 14px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .value-list li {
+        padding: 18px 20px;
+        border-left: 3px solid var(--accent);
+        border-radius: 0 12px 12px 0;
+        background: var(--surface);
+        box-shadow: 0 4px 18px rgba(25, 25, 20, .04);
+      }
+
+      .value-list strong {
+        display: block;
+        margin-bottom: 2px;
+      }
+
+      .value-list span {
+        color: var(--muted);
+        font-size: .93rem;
+      }
+
+      .skills {
+        background: var(--ink);
+        color: white;
+      }
+
+      .skills .eyebrow { color: #f3b2a7; }
+      .skills .section-intro { color: #c8d0d5; }
+
+      .skill-layout {
+        display: grid;
+        grid-template-columns: 1.15fr .85fr;
+        gap: 24px;
+        margin-top: 42px;
+      }
+
+      .skill-panel {
+        padding: 27px;
+        border: 1px solid rgba(255,255,255,.12);
+        border-radius: 18px;
+        background: rgba(255,255,255,.045);
+      }
+
+      .skill-panel h3 {
+        margin: 0 0 16px;
+        font-size: 1rem;
+      }
+
+      .tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 9px;
+      }
+
+      .tag {
+        padding: 7px 11px;
+        border: 1px solid rgba(255,255,255,.18);
+        border-radius: 100px;
+        color: #e7ecee;
+        font-size: .86rem;
+      }
+
+      .timeline {
+        position: relative;
+        display: grid;
+        gap: 18px;
+        margin: 45px 0 0;
+      }
+
+      .experience {
+        display: grid;
+        grid-template-columns: 118px 1fr;
+        gap: 28px;
+        padding: 25px;
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        background: var(--surface);
+        box-shadow: 0 7px 24px rgba(35, 30, 25, .035);
+      }
+
+      .experience time {
+        color: var(--accent);
+        font-size: .86rem;
+        font-weight: 800;
+      }
+
+      .experience h3 {
+        margin: 0;
+        font-size: 1.08rem;
+      }
+
+      .experience p {
+        margin: 9px 0 0;
+        color: var(--muted);
+      }
+
+      .project {
+        margin-top: 44px;
+        padding: clamp(26px, 5vw, 54px);
+        border-radius: 24px;
+        background: linear-gradient(135deg, #f7e4de 0%, #f6efe9 100%);
+      }
+
+      .project-grid {
+        display: grid;
+        grid-template-columns: 1fr .86fr;
+        gap: 50px;
+        align-items: start;
+      }
+
+      .project h3 {
+        margin: 0;
+        font-size: clamp(1.55rem, 3vw, 2.15rem);
+        letter-spacing: -.045em;
+      }
+
+      .project p { color: #4f4845; }
+
+      .feature-list {
+        display: grid;
+        gap: 11px;
+        margin: 24px 0 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .feature-list li::before {
+        margin-right: 10px;
+        color: var(--accent);
+        content: "✓";
+        font-weight: 900;
+      }
+
+      .learning-card {
+        padding: 25px;
+        border-radius: 16px;
+        background: white;
+      }
+
+      .learning-card h4 { margin: 0 0 12px; }
+      .learning-card p { margin: 0; }
+
+      footer {
+        padding: 44px 0;
+        border-top: 1px solid var(--line);
+        text-align: center;
+      }
+
+      footer p {
+        margin: 0;
+        color: var(--muted);
+        font-size: .92rem;
+      }
+
+      footer a {
+        color: var(--accent);
+        font-weight: 750;
+      }
+
+      @media (max-width: 760px) {
+        .container { width: min(100% - 32px, 1120px); }
+        .nav-links { display: none; }
+        .hero { padding: 72px 0 60px; }
+        .hero-grid,
+        .about-grid,
+        .skill-layout,
+        .project-grid {
+          grid-template-columns: 1fr;
+          gap: 32px;
+        }
+
+        .section { padding: 65px 0; }
+        .experience { grid-template-columns: 1fr; gap: 8px; }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <nav class="container" aria-label="Navegação principal">
+        <a class="brand" href="#inicio">Vitoria</a>
+
+        <ul class="nav-links">
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#competencias">Competências</a></li>
+          <li><a href="#trajetoria">Trajetória</a></li>
+          <li><a href="#projeto">Projeto</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="inicio">
+      <section class="hero">
+        <div class="container hero-grid">
+          <div>
+            <p class="eyebrow">Portfólio profissional</p>
+
+            <h1>
+              Construindo soluções com
+              <span>tecnologia</span>
+              e propósito.
+            </h1>
+
+            <p class="hero-copy">
+              Estudante de Sistemas de Informação, com formação técnica em programação e interesse em desenvolvimento web, dados e Inteligência Artificial aplicada.
+            </p>
+
+            <div class="actions">
+              <a class="button" href="#projeto">Ver projeto em destaque</a>
+              <a class="button secondary" href="#contato">Entrar em contato</a>
+            </div>
+          </div>
+
+          <aside class="profile-card" aria-label="Resumo do perfil">
+            <div class="avatar" aria-hidden="true">SN</div>
+
+            <strong>Vitoria</strong>
+
+            <p>
+              Estudante de Sistemas de Informação e profissional em evolução na área de tecnologia.
+            </p>
+
+            <div class="quick-facts">
+              <span>✦ Programação de Computadores — Etec</span>
+              <span>✦ Computer Programming — MasterTech</span>
+              <span>✦ Atuação profissional — Mercado Livre</span>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section" id="sobre">
+        <div class="container">
+          <p class="eyebrow">Sobre mim</p>
+
+          <h2 class="section-title">
+            Aprendizado contínuo para criar experiências digitais mais úteis.
+          </h2>
+
+          <div class="about-grid">
+            <div class="about-copy">
+              <p>
+                Minha trajetória em tecnologia começou no ensino médio, ao conhecer a formação técnica oferecida pela Etec Centro Paula Souza. Em 2017, concluí o curso de Programação de Computadores e, mais tarde, ampliei meus conhecimentos no curso intensivo de Computer Programming da Estação Hack MasterTech.
+              </p>
+
+              <p>
+                Após iniciar minha formação na Fatec, enfrentei os impactos da pandemia e mantive o foco na experiência profissional e nas transformações do mercado. Hoje, atuo no Mercado Livre e curso Sistemas de Informação, fortalecendo minha base para uma carreira em tecnologia.
+              </p>
+
+              <p>
+                Tenho interesse em desenvolvimento de software, organização de dados e Inteligência Artificial aplicada de forma ética, acessível e responsável.
+              </p>
+            </div>
+
+            <ul class="value-list">
+              <li>
+                <strong>Colaboração</strong>
+                <span>Construir em equipe, com comunicação clara e respeito às diferentes perspectivas.</span>
+              </li>
+
+              <li>
+                <strong>Impacto positivo</strong>
+                <span>Usar a tecnologia para tornar processos e informações mais acessíveis.</span>
+              </li>
+
+              <li>
+                <strong>Evolução constante</strong>
+                <span>Aprender, testar e transformar desafios em oportunidades de crescimento.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section skills" id="competencias">
+        <div class="container">
+          <p class="eyebrow">Competências</p>
+
+          <h2 class="section-title">
+            Tecnologia com visão de produto e pessoas.
+          </h2>
+
+          <p class="section-intro">
+            Conhecimentos desenvolvidos por meio da formação técnica, curso intensivo, projetos acadêmicos e experiência profissional.
+          </p>
+
+          <div class="skill-layout">
+            <article class="skill-panel">
+              <h3>Competências técnicas</h3>
+
+              <div class="tags">
+                <span class="tag">JavaScript</span>
+                <span class="tag">HTML</span>
+                <span class="tag">CSS</span>
+                <span class="tag">Python</span>
+                <span class="tag">PHP</span>
+                <span class="tag">Java</span>
+                <span class="tag">Git</span>
+                <span class="tag">GitHub</span>
+                <span class="tag">Banco de Dados</span>
+                <span class="tag">Front-end</span>
+                <span class="tag">Back-end</span>
+                <span class="tag">Metodologias Ágeis</span>
+                <span class="tag">IA aplicada</span>
+              </div>
+            </article>
+
+            <article class="skill-panel">
+              <h3>Competências comportamentais</h3>
+
+              <div class="tags">
+                <span class="tag">Resolução de problemas</span>
+                <span class="tag">Pensamento crítico</span>
+                <span class="tag">Proatividade</span>
+                <span class="tag">Senso de dono</span>
+                <span class="tag">Comunicação</span>
+                <span class="tag">Colaboração</span>
+                <span class="tag">Organização</span>
+                <span class="tag">Adaptabilidade</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="trajetoria">
+        <div class="container">
+          <p class="eyebrow">Trajetória</p>
+
+          <h2 class="section-title">
+            Formação e experiências que definem meu caminho.
+          </h2>
+
+          <div class="timeline">
+            <article class="experience">
+              <time>Atual</time>
+              <div>
+                <h3>Sistemas de Informação</h3>
+                <p>
+                  Formação em andamento para consolidar conhecimentos em sistemas, desenvolvimento de software, banco de dados e inovação.
+                </p>
+              </div>
+            </article>
+
+            <article class="experience">
+              <time>Atual</time>
+              <div>
+                <h3>Mercado Livre</h3>
+                <p>
+                  Atuação profissional que amplia minha visão de mercado, organização, responsabilidade, adaptação e colaboração em equipe.
+                </p>
+              </div>
+            </article>
+
+            <article class="experience">
+              <time>5 semanas</time>
+              <div>
+                <h3>Estação Hack MasterTech — Computer Programming</h3>
+                <p>
+                  Formação intensiva em desenvolvimento de software, com fundamentos de front-end, back-end e aplicações.
+                </p>
+              </div>
+            </article>
+
+            <article class="experience">
+              <time>2017</time>
+              <div>
+                <h3>Etec Centro Paula Souza — Programação de Computadores</h3>
+                <p>
+                  Formação técnica que construiu minha base em lógica de programação e desenvolvimento de aplicações.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="projeto">
+        <div class="container">
+          <p class="eyebrow">Projeto em destaque</p>
+
+          <h2 class="section-title">
+            Plataforma de Hospedagens e Viagens
+          </h2>
+
+          <div class="project">
+            <div class="project-grid">
+              <div>
+                <h3>
+                  Uma experiência de busca mais clara para viagens e hospedagens.
+                </h3>
+
+                <p>
+                  Projeto acadêmico desenvolvido durante a Estação Hack MasterTech, inspirado em plataformas como Trivago e Airbnb. A proposta foi centralizar informações para facilitar a comparação e a escolha de hospedagens.
+                </p>
+
+                <ul class="feature-list">
+                  <li>Consulta de hotéis e hospedagens disponíveis</li>
+                  <li>Filtros por preço e características da estadia</li>
+                  <li>Informações sobre acomodações e kits de viagem</li>
+                  <li>Possibilidade de contato com responsáveis pelos imóveis</li>
+                </ul>
+              </div>
+
+              <aside class="learning-card">
+                <h4>Tecnologias e aprendizados</h4>
+
+                <p>
+                  <strong>Tecnologias:</strong>
+                  HTML, CSS, JavaScript, PHP, Java, Python, conceitos de banco de dados, Git e GitHub.
+                </p>
+
+                <p>
+                  <strong>Aprendizados:</strong>
+                  aplicação prática do ciclo de desenvolvimento, organização de dados, experiência do usuário, resolução de problemas e colaboração.
+                </p>
+              </aside>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer id="contato">
+      <div class="container">
+        <p>Vamos conversar? Acesse meus perfis profissionais.</p>
+
+        <p>
+          <a href="https://www.linkedin.com/in/vitoriadossantosar/" target="_blank" rel="noreferrer">
+            LinkedIn
+          </a>
+          &nbsp;·&nbsp;
+          <a href="https://github.com/Vickkk097" target="_blank" rel="noreferrer">
+            GitHub
+          </a>
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
+```
