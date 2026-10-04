@@ -16,6 +16,19 @@ O projeto seguirá um fluxo GitFlow simplificado, adequado ao trabalho individua
 4. Publicar somente a partir de uma versão revisada em `main`.
 5. Manter a branch `develop` sincronizada depois de uma publicação ou hotfix.
 
-## Estado inicial
+## Aplicação no repositório
 
-Esta política documenta o fluxo proposto. As branches só aparecem no histórico do Git depois da inicialização do repositório e do primeiro commit; a autoria desse commit deve usar o nome e o e-mail escolhidos pela pessoa responsável pelo projeto.
+O repositório local foi inicializado com um commit-base em `main`. A partir dele, foi criada `develop` para integração e `feature/gitflow-workflow` para registrar esta organização e documentar o fluxo. Depois da revisão, a feature é incorporada em `develop`; `main` continua como linha-base até que a etapa de acessibilidade e preparação de produção seja concluída.
+
+O remoto `origin` aponta para o repositório GitHub informado. O código ainda não foi enviado ao remoto nem publicado.
+
+## Exemplo de comandos
+
+```sh
+git switch develop
+git switch -c feature/nova-funcionalidade
+# implementar e registrar commits pequenos
+git switch develop
+git merge --no-ff feature/nova-funcionalidade
+git branch -d feature/nova-funcionalidade
+```
