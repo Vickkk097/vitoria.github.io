@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><title>Rede Semente</title></head><body>
+<main id="conteudo">
+    <section class="feedback-demo-heading container" aria-labelledby="feedback-title">
+      <p class="eyebrow"><span class="eyebrow-dot"></span> Componentes reutilizáveis</p>
+      <h1 id="feedback-title">Retornos claros, no momento certo.</h1>
+      <p>Uma prévia dos avisos e etiquetas que ajudam a pessoa a entender o que está acontecendo no site.</p>
+    </section>
+    <section class="feedback-demo container" aria-label="Exemplos de feedback">
+      <div class="feedback-demo-grid">
+        <article class="feedback-demo-card">
+          <p class="eyebrow">01 · Categorização</p>
+          <h2>Badges de projeto</h2>
+          <p>Etiquetas curtas identificam a área ou a situação de cada iniciativa.</p>
+          <ul class="badge-list" aria-label="Categorias de projetos">
+            <li><span class="badge badge--green">Educação</span></li>
+            <li><span class="badge badge--gold">Alimentação</span></li>
+            <li><span class="badge badge--coral">Voluntariado</span></li>
+            <li><span class="badge badge--green">Inscrições abertas</span></li>
+          </ul>
+        </article>
+        <article class="feedback-demo-card">
+          <p class="eyebrow">02 · Alertas</p>
+          <h2>Mensagens de estado</h2>
+          <div class="feedback-alert feedback-alert--success" role="status" aria-live="polite">
+            <span aria-hidden="true">✓</span><div><strong>Cadastro validado</strong><p>Os dados foram conferidos. A equipe pode seguir com o contato.</p></div>
+          </div>
+          <div class="feedback-alert feedback-alert--error" role="alert">
+            <span aria-hidden="true">!</span><div><strong>Confira os campos</strong><p>Há informações que precisam ser corrigidas antes de continuar.</p></div>
+          </div>
+        </article>
+        <article class="feedback-demo-card feedback-demo-toast-card">
+          <div><p class="eyebrow">03 · Toast</p><h2>Um aviso rápido, sem interromper a navegação</h2><p>O aviso aparece por alguns segundos e é anunciado por leitores de tela.</p></div>
+          <div class="feedback-demo-actions">
+            <button class="button button-primary" id="show-toast" type="button">Mostrar toast <span aria-hidden="true">↗</span></button>
+            <div class="feedback-alert feedback-alert--error feedback-demo-inline-error" id="demo-inline-error" role="alert" hidden>
+              <span aria-hidden="true">!</span><div><strong>Não foi possível concluir</strong><p>Revise os dados e tente novamente.</p></div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+    <div class="feedback-toast feedback-toast--error" id="demo-toast" role="alert" aria-live="assertive" aria-atomic="true" hidden>
+      <span aria-hidden="true">!</span><div><strong>Ops, algo deu errado</strong><span>Confira o alerta ao lado do botão para ver como corrigir.</span></div>
+    </div>
+  </main>
+</body></html>
