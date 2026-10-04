@@ -20,7 +20,7 @@ O projeto seguirá um fluxo GitFlow simplificado, adequado ao trabalho individua
 
 O repositório local foi inicializado com um commit-base em `main`. A partir dele, foi criada `develop` para integração e `feature/gitflow-workflow` para registrar esta organização e documentar o fluxo. Depois da revisão, a feature é incorporada em `develop`; `main` continua como linha-base até que a etapa de acessibilidade e preparação de produção seja concluída.
 
-O remoto `origin` aponta para o repositório GitHub informado. O código ainda não foi enviado ao remoto nem publicado.
+O remoto `origin` aponta para o repositório GitHub informado. Enviar branches ao GitHub e publicar o site pelo GitHub Pages são etapas diferentes: o `push` sincroniza o código, enquanto a publicação depende da configuração de Pages.
 
 ## Exemplo de comandos
 
