@@ -1,20 +1,40 @@
-# Rede Semente — SPA
+# Olá, eu sou a Vitoria 👋
 
-Versão de página única do site da ONG. A navegação usa rotas com hash (`#/inicio`, `#/projetos` e `#/cadastro`); os conteúdos HTML são carregados como templates JavaScript e inseridos na área principal sem recarregar o documento.
+Seja bem-vindo(a) ao meu perfil! Sou estudante de Sistemas de Informação, com formação técnica em Programação de Computadores pela Etec Centro Paula Souza e experiência em formação intensiva de desenvolvimento pela Estação Hack MasterTech.
 
-## Estrutura
+Atualmente, atuo no Mercado Livre e sigo desenvolvendo conhecimentos voltados à tecnologia, inovação e criação de soluções digitais.
 
-- `index.html`: shell da aplicação, navegação persistente e área onde as telas são renderizadas.
-- `html/`: templates das telas institucionais, projetos, cadastro e demonstração de feedback.
-- `css/`: folha de estilos compartilhada.
-- `imagens/`: local reservado para imagens locais otimizadas. As imagens atuais vêm do Unsplash.
-- `js/`: inicialização da SPA e módulos separados por responsabilidade.
-- `assets/`: arquivos da versão estática anterior, mantidos como referência e compatibilidade.
+## Sobre mim
 
-## Executar
+- 🎓 Estudante de Sistemas de Informação
+- 💻 Formação técnica em Programação de Computadores
+- 🚀 Interesse em desenvolvimento de software e soluções digitais
+- 🤖 Em aprendizado contínuo sobre Inteligência Artificial aplicada
+- 🌱 Valorizo colaboração, diversidade, inclusão e evolução constante
 
-Como a SPA carrega templates com `fetch` e usa módulos JavaScript, abra o projeto por um servidor local em vez de abrir `index.html` diretamente com `file://`. No VS Code, pode usar a extensão Live Server e abrir este `index.html`.
+## Minha stack
 
-## Cadastro de demonstração
+- **Linguagens:** JavaScript, Python, PHP e Java
+- **Desenvolvimento web:** HTML, CSS e JavaScript
+- **Ferramentas:** Git e GitHub
+- **Conhecimentos em desenvolvimento:** Banco de dados, front-end, back-end e metodologias ágeis
+- **Em desenvolvimento:** Inteligência Artificial aplicada e Sistemas de Informação
 
-O formulário valida os campos no navegador, aplica máscaras e salva os registros no `localStorage`. O CPF é validado, mas não é persistido. Os outros dados do formulário permanecem apenas neste navegador; não há envio para servidor. Evite inserir informações pessoais reais.
+## Interesses de desenvolvimento
+
+Tenho interesse em atuar e evoluir principalmente nas áreas de:
+
+- Desenvolvimento web front-end e back-end
+- Desenvolvimento de aplicações e sistemas
+- Banco de dados e organização de informações
+- Inteligência Artificial aplicada à automação e à melhoria de processos
+- Experiência do usuário e soluções digitais acessíveis
+
+## Objetivo
+
+Busco ampliar meus conhecimentos técnicos, participar de projetos colaborativos e desenvolver soluções que gerem impacto positivo para pessoas e negócios.
+
+## Projeto Rede Semente
+
+Este repositório também contém o projeto acadêmico da ONG Rede Semente. A arquitetura, a execução local e os detalhes do formulário estão documentados em [docs/README-PROJETO.md](docs/README-PROJETO.md); o fluxo GitFlow está em [docs/GITFLOW.md](docs/GITFLOW.md).
+
