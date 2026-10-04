@@ -1,40 +1,63 @@
-# Olá, eu sou a Vitoria 👋
+# Rede Semente
 
-Seja bem-vindo(a) ao meu perfil! Sou estudante de Sistemas de Informação, com formação técnica em Programação de Computadores pela Etec Centro Paula Souza e experiência em formação intensiva de desenvolvimento pela Estação Hack MasterTech.
+Site institucional de uma organização social, desenvolvido como uma Single Page Application (SPA). A proposta é apresentar a ONG, divulgar seus projetos e facilitar o cadastro de pessoas interessadas em colaborar.
 
-Atualmente, atuo no Mercado Livre e sigo desenvolvendo conhecimentos voltados à tecnologia, inovação e criação de soluções digitais.
+## Funcionalidades
 
-## Sobre mim
+- Navegação entre Início, Projetos e Cadastro sem recarregar a página.
+- Carregamento de templates HTML com JavaScript.
+- Formulário com validações no navegador e máscaras para CPF, telefone e CEP.
+- Componentes de feedback visual, como alertas e notificações.
+- Armazenamento local de dados de demonstração com `localStorage`.
 
-- 🎓 Estudante de Sistemas de Informação
-- 💻 Formação técnica em Programação de Computadores
-- 🚀 Interesse em desenvolvimento de software e soluções digitais
-- 🤖 Em aprendizado contínuo sobre Inteligência Artificial aplicada
-- 🌱 Valorizo colaboração, diversidade, inclusão e evolução constante
+## Tecnologias
 
-## Minha stack
+- **HTML5:** estrutura das páginas e dos formulários.
+- **CSS3:** estilos, layout responsivo e estados de interação.
+- **JavaScript (ES modules):** navegação da SPA, templates, validações e eventos.
+- **APIs do navegador:** `fetch` para carregar os templates e `localStorage` para persistir dados localmente.
+- **Imagens:** imagens externas do Unsplash.
 
-- **Linguagens:** JavaScript, Python, PHP e Java
-- **Desenvolvimento web:** HTML, CSS e JavaScript
-- **Ferramentas:** Git e GitHub
-- **Conhecimentos em desenvolvimento:** Banco de dados, front-end, back-end e metodologias ágeis
-- **Em desenvolvimento:** Inteligência Artificial aplicada e Sistemas de Informação
+## Estrutura do projeto
 
-## Interesses de desenvolvimento
+```text
+.
+├── index.html       # Estrutura principal e área de renderização da SPA
+├── html/            # Templates das telas e demonstração de feedback
+├── css/             # Folha de estilos compartilhada
+├── js/              # Inicialização e módulos JavaScript
+├── imagens/         # Diretório reservado para imagens locais
+├── assets/          # Arquivos da versão estática anterior
+└── docs/            # Documentação do projeto e do fluxo Git
+```
 
-Tenho interesse em atuar e evoluir principalmente nas áreas de:
+## Como executar localmente
 
-- Desenvolvimento web front-end e back-end
-- Desenvolvimento de aplicações e sistemas
-- Banco de dados e organização de informações
-- Inteligência Artificial aplicada à automação e à melhoria de processos
-- Experiência do usuário e soluções digitais acessíveis
+Como o projeto usa `fetch` e módulos JavaScript, ele precisa ser aberto por um servidor local. Abrir o `index.html` diretamente com `file://` pode impedir o carregamento dos templates.
 
-## Objetivo
+1. Clone o repositório e entre na pasta:
 
-Busco ampliar meus conhecimentos técnicos, participar de projetos colaborativos e desenvolver soluções que gerem impacto positivo para pessoas e negócios.
+   ```bash
+   git clone https://github.com/Vickkk097/vitoria.github.io.git
+   cd vitoria.github.io
+   ```
 
-## Projeto Rede Semente
+2. Abra a pasta no VS Code e instale a extensão **Live Server**, se ainda não tiver.
+3. Abra o `index.html` e selecione **Go Live**.
+4. O site será aberto no navegador pelo servidor local.
 
-Este repositório também contém o projeto acadêmico da ONG Rede Semente. A arquitetura, a execução local e os detalhes do formulário estão documentados em [docs/README-PROJETO.md](docs/README-PROJETO.md); o fluxo GitFlow está em [docs/GITFLOW.md](docs/GITFLOW.md).
+O projeto não precisa de instalação de pacotes npm. No momento, não há comandos de build ou de testes automatizados configurados.
 
+## Observação sobre o formulário
+
+O formulário serve para demonstração: os dados são guardados apenas no navegador e não são enviados a um servidor. O CPF é validado, mas não é armazenado. Evite preencher o formulário com informações pessoais reais.
+
+## Versionamento
+
+O projeto segue um fluxo GitFlow simplificado: `main` representa a versão estável, `develop` reúne as alterações e branches `feature/` são usadas para funcionalidades específicas. As orientações estão em [docs/GITFLOW.md](docs/GITFLOW.md).
+
+## Documentação relacionada
+
+- [Detalhes da SPA e do cadastro](docs/README-PROJETO.md)
+- [Fluxo de branches GitFlow](docs/GITFLOW.md)
+- [Perfil da autora](docs/README-PERFIL.md)
