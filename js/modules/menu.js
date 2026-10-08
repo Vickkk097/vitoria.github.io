@@ -16,5 +16,9 @@ export function initMenu() {
     navigation.classList.toggle('is-open', opening);
   });
   navigation.addEventListener('click', (event) => { if (event.target.closest('a')) close(); });
-  document.addEventListener('keydown', (event) => { if (event.key === 'Escape') close(); });
+  document.addEventListener('keydown', (event) => {
+    if (event.key !== 'Escape' || button.getAttribute('aria-expanded') !== 'true') return;
+    close();
+    button.focus();
+  });
 }

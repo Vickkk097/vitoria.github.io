@@ -42,7 +42,8 @@ async function render(route, { focus = false } = {}) {
         heading.tabIndex = -1;
         heading.focus({ preventScroll: true });
       }
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' });
     }
   } catch (error) {
     if (error.name === 'AbortError' || version !== renderVersion) return;

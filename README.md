@@ -16,7 +16,7 @@ Site institucional de uma organização social, desenvolvido como uma Single Pag
 - **CSS3:** estilos, layout responsivo e estados de interação.
 - **JavaScript (ES modules):** navegação da SPA, templates, validações e eventos.
 - **APIs do navegador:** `fetch` para carregar os templates e `localStorage` para persistir dados localmente.
-- **Imagens:** imagens externas do Unsplash.
+- **Imagens:** imagens externas do Unsplash com `auto=format`, `srcset` e `sizes` para escolher resoluções conforme a viewport; as imagens abaixo da primeira dobra usam carregamento `lazy`.
 
 ## Estrutura do projeto
 
@@ -33,7 +33,7 @@ Site institucional de uma organização social, desenvolvido como uma Single Pag
 
 ## Como executar localmente
 
-Como o projeto usa `fetch` e módulos JavaScript, ele precisa ser aberto por um servidor local. Abrir o `index.html` diretamente com `file://` pode impedir o carregamento dos templates.
+O projeto usa o Vite para servir a aplicação durante o desenvolvimento e gerar a versão otimizada para publicação. É necessário ter Node.js e npm instalados.
 
 1. Clone o repositório e entre na pasta:
 
@@ -42,11 +42,27 @@ Como o projeto usa `fetch` e módulos JavaScript, ele precisa ser aberto por um 
    cd vitoria.github.io
    ```
 
-2. Abra a pasta no VS Code e instale a extensão **Live Server**, se ainda não tiver.
-3. Abra o `index.html` e selecione **Go Live**.
-4. O site será aberto no navegador pelo servidor local.
+2. Instale as dependências e inicie o servidor:
 
-O projeto não precisa de instalação de pacotes npm. No momento, não há comandos de build ou de testes automatizados configurados.
+   ```bash
+   npm install
+   npm run dev
+   ```
+
+3. Para gerar a versão de produção e visualizá-la localmente:
+
+   ```bash
+   npm run build
+   npm run preview
+   ```
+
+Os arquivos prontos para publicação são gerados na pasta `dist`. Os templates HTML são importados como texto no módulo da SPA e incluídos na build do Vite.
+
+## Publicação automática
+
+O workflow `.github/workflows/deploy.yml` compila o projeto com Vite e publica a pasta `dist` no GitHub Pages sempre que há um push em `main`. Pull requests para `main` executam a build para conferir se ela funciona, sem publicar a versão.
+
+Na primeira configuração do repositório, em **Settings > Pages > Build and deployment**, selecione **GitHub Actions** como fonte. Depois que o workflow estiver na branch `main`, cada atualização ou merge nessa branch dispara a publicação. A URL fica disponível nas execuções do workflow e na seção **Pages** do repositório.
 
 ## Observação sobre o formulário
 
